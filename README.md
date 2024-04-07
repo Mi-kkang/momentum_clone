@@ -130,3 +130,64 @@ const로 지정을 하였어도 object 안에 있는 값은 바꿀 수 있다!
 const는 object에게 적용된다는 것!
 
 마찬가지로 object 안에 없는 내용을 추가하는 것도 할 수 있다! (이건 조금 헷갈릴수도... ...)
+
+----
+
+### 6) Functions (함수)
+
+코드의 반복을 줄이고 싶을 때 사용하는 기능이다.
+function 은 어떤 코드를 캡슐화해서, 실행을 여러 번 할 수 있게 해준다.
+
+```js
+function sayHello(){
+    console.log('Hello!');
+}
+
+sayHello();
+```
+
+python에서 def 를 쓰는 것처럼, 자바 스크립트에서는 function 을 쓰고 함수를 정의하는 것이다.
+
+```js
+function sayHello(name){
+    console.log('Hello my name is' + name);
+}
+
+sayHello('Ritsu');
+```
+
+인자를 받을 수도 있다.
+
+```js
+function plus(a, b){
+    console.log(a + b);
+}
+function divide(a, b){
+    console.log(a / b);
+}
+
+plus();
+// 이렇게 출력할 경우 NaN 가 나온다.
+// NaN = Not a Number
+
+plus(8, 60);
+divide(98, 20);
+```
+자바 스크립트의 함수는 파이썬과 거의 비슷하다고 볼 수 있다.
+인자를 받고, 그 인자는 함수 안에서만 유효하다는 점. 인자는 하나 이상 받을 수 있는 점.
+하지만 오류가 난다기보단 값이 없다 등으로 출력이 된다.
+
+#### object 안에서 사용되는 function
+
+```js
+const player = {
+    name : 'Ritsu',
+    sayHello:function(otheName){
+        console.log('Hello ' + otherName + ' nice to meet you!');
+    },
+};
+
+console.log(player.name);
+player.sayHello('Roku');
+```
+ object 에서 function을 사용하는 법도 있다. 이 부분은 파이썬과 다른 것 같다. 유용하게 쓰이지 않을까...?
